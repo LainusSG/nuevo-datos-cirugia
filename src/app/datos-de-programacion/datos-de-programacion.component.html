@@ -1,0 +1,323 @@
+<!------------------------------ INICIO DE ENCABEZADO -------------------------------->
+<h2 align="center"> Datos de programación de cirugía</h2>
+
+<div class="container">
+  <div class="line"><mat-divider></mat-divider></div>
+  <div class="text mat-typography">Información de programación de Cirugía</div>
+  <div class="line"><mat-divider></mat-divider></div>
+</div>
+
+<p align="end">
+  <mat-form-field>
+    <mat-label>Fecha de cirugía</mat-label>
+    <input matInput [matDatepicker]="dp">
+    <!-- <mat-hint>{{getDateFormatString()}}</mat-hint>-->
+    <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+    <mat-datepicker #dp></mat-datepicker>
+  </mat-form-field>
+
+<!--  ------------------------------FIN DE ENCABEZADO ---------------------------------->
+
+<div class="alinear" >
+  
+    <section class="example-section">
+      <label class="example-margin">Prioridad de la Cirugía:</label>
+      <mat-radio-group [(ngModel)]="labelPosition">
+        <mat-radio-button class="example-margin" value="alta">Alta</mat-radio-button>
+        <mat-radio-button class="example-margin" value="media">Media</mat-radio-button>
+        <mat-radio-button class="example-margin" value="baja">Baja</mat-radio-button>
+      </mat-radio-group>
+    </section>
+  </div>
+  
+
+
+<form #f="ngForm" (ngSubmit)="DatosProgramacion(f)" >
+  <table class="alinear-input" align="center">
+
+  <!------------------------------------------------------------              fila 1                                ----------------------------------------------------------------->
+    <tr>
+      <td>
+        <mat-label>Paciente: &nbsp;</mat-label>
+      </td>
+  
+      <td>
+        <mat-form-field class="input1">
+          <input matInput type="text" placeholder="Hugo Rodriguez" name="paciente" ngModel required  >
+          </mat-form-field>
+      </td>
+  
+      <td>
+        <mat-label>Cirugía Programada: &nbsp;</mat-label>
+      </td>
+  
+      <td>
+        <mat-form-field class="input2">
+          <input matInput type="text" placeholder="Hernioplastía Inguinal Laparoscópica"  name="cirugiaprogramada" ngModel required >
+        </mat-form-field>
+      </td>
+    </tr>
+  
+  <!------------------------------------------------------------              fila 2                                ----------------------------------------------------------------->
+  
+    <tr>
+      <td>
+        <mat-label>Registro: &nbsp;</mat-label>
+      </td>
+  
+      <td>
+        <mat-form-field class="input1">
+          <input matInput type="text" placeholder="112233"  name="registro" ngModel required>
+          </mat-form-field>
+      </td>
+  
+      <td>
+        <mat-label>Solicita: &nbsp;</mat-label>
+      </td>
+  
+      <td>
+        <mat-form-field class="input2">
+          <input matInput type="text" placeholder="Dr. Pablo"  name="solicita" ngModel required>
+        </mat-form-field>
+      </td>
+    </tr>
+  
+  <!------------------------------------------------------------              fila 3                                ----------------------------------------------------------------->
+  
+    <tr>
+      <td>
+        <mat-label>Edad: &nbsp;</mat-label>
+      </td>
+  
+      <td>
+        <mat-form-field class="input1">
+          <input matInput type="text" placeholder="35 años"  name="edad" ngModel required>
+          </mat-form-field>
+      </td>
+
+
+  
+      <td>
+        <mat-label>Médico cirujano: &nbsp;</mat-label>
+      </td>
+  
+      <td>
+        <mat-form-field class="input2">
+          <input matInput type="text" placeholder="Dra. Yazmin"  name="medicocirujano" ngModel required>
+        </mat-form-field>
+      </td>
+    </tr>
+  
+  <!------------------------------------------------------------              fila 4                                ----------------------------------------------------------------->
+  
+    <tr>
+      <td>
+        <mat-label>Fecha de Nacimiento: &nbsp;</mat-label>
+      </td>
+  
+      <td>
+        <mat-form-field class="input1">
+          <input matInput type="text" placeholder="7/01/1981"  name="fechanacimiento" ngModel required>
+          </mat-form-field>
+      </td>
+  
+      <td>
+        <mat-label>Med. Anestesiólogo: &nbsp;</mat-label>
+      </td>
+  
+      <td>
+        <mat-form-field class="input2">
+          <input matInput type="text" placeholder="Dr. Casimiro "  name="medicoanestesiologo" ngModel required>
+        </mat-form-field>
+      </td>
+    </tr>
+  
+  <!------------------------------------------------------------              fila 5                                ----------------------------------------------------------------->
+  <tr>
+    <td>
+      <mat-label>Número de habitación: &nbsp;</mat-label>
+    </td>
+  
+    <td>
+      <mat-form-field class="input1">
+        <input matInput type="text" placeholder="204"  name="numerohabitacion" ngModel required>
+        </mat-form-field>
+    </td>
+  
+    <td>
+      <mat-label>Tipo de Anestesia: &nbsp;</mat-label>
+    </td>
+  
+    <td>
+      <mat-form-field class="input2">
+        <input matInput type="text" placeholder="Epidural"  name="tipoanestesia" ngModel required >
+      </mat-form-field>
+    </td>
+  </tr>
+  
+  <!------------------------------------------------------------              fila 6                                ----------------------------------------------------------------->
+  
+  <tr>
+    <td>
+      <mat-label>Sala: &nbsp;</mat-label>
+    </td>
+  
+    <td>
+      <mat-form-field class="input1">
+        <input matInput type="text" placeholder="Quirófano 2"  name="sala" ngModel required>
+        </mat-form-field>
+    </td>
+  
+    <td>
+      <mat-label>Ayudante / Residente: &nbsp;</mat-label>
+    </td>
+  
+    <td>
+      <mat-form-field class="input2">
+        <input matInput type="text" placeholder="Enf. Juanita"  name="ayudante" ngModel required>
+      </mat-form-field>
+    </td>
+  </tr>
+  
+  <!------------------------------------------------------------              fila 7                                ----------------------------------------------------------------->
+  
+  <tr>
+    <td>
+      <mat-label>Turno: &nbsp;</mat-label>
+    </td>
+  
+    <td>
+      <mat-form-field class="input1">
+        <input matInput type="text" placeholder="1"  name="turno" ngModel required>
+        </mat-form-field>
+    </td>
+  
+    <td>
+      <mat-label>Área de registro: &nbsp;</mat-label>
+    </td>
+  
+    <td>
+      <mat-form-field class="input2">
+        <input matInput type="text" placeholder="Jefatura de Quirófano"  name="arearegistro" ngModel required>
+      </mat-form-field>
+    </td>
+  </tr>
+  
+  <!------------------------------------------------------------              fila 8                                ----------------------------------------------------------------->
+  
+  <tr>
+    <td>
+      <mat-label>Diagnóstico: &nbsp;</mat-label>
+    </td>
+  
+    <td>
+      <mat-form-field class="input1">
+        <input matInput type="text" placeholder="Hernia Inguinal Bilateral"  name="diagnostico" ngModel required>
+        </mat-form-field>
+    </td>
+  
+    <td>
+      <mat-label>Enfermera(o): &nbsp;</mat-label>
+    </td>
+  
+    <td>
+      <mat-form-field class="input2">
+        <input matInput type="text" placeholder="Susana García"  name="enfermero" ngModel required>
+      </mat-form-field>
+    </td>
+  </tr> 
+  </table>
+  <!------------------- OTRA TABLA  ----->
+  
+  <table class="alinear-input" align="center"> 
+    <tr style="width: 100%;">
+      <td style="width: 14%;">
+        <mat-label>Notas Adicionales:</mat-label>
+      </td>
+      <td style="width: 86%;">
+        <mat-form-field class="textarea">
+          <textarea matInput placeholder="3 Pinzas H. extras para la cirugía "  name="notasadicionales" ngModel required></textarea>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  
+</form>
+
+
+
+<h1>
+  Ingresa la información del equipamiento para la cirugía
+</h1>  
+
+
+<p align="center">
+  Requisición de Instrumental e Insumos
+</p>
+
+<div  style="display: flex;">
+  <div style=" width: 70%; margin-left:5%;">
+<label>Elemento:</label><br>
+<mat-form-field  style=" width: 100%">
+    <mat-select disableRipple>
+      <mat-option value="1">Kit 1</mat-option>
+      <mat-option value="2">Pinza Forester</mat-option>
+      <mat-option value="3">Bisturí Quirúrgico</mat-option>
+      <mat-option value="4">Pinzas Estándar</mat-option>
+      <mat-option value="5">Kit 2</mat-option>
+    </mat-select>
+  </mat-form-field></div>
+
+  <div style=" width: 10%; margin-left:1%; margin-right: 5%;">
+  <label >Cantidad:</label><br>
+  <mat-form-field style=" width: 100%">
+    <input matInput type="number" min="1"  step="1" value="1">
+  </mat-form-field>
+</div>
+  <button style="margin-right: 5%;">Agregar</button>
+</div>
+
+<h1>
+  Equipamiento Cirugía 
+</h1>  
+
+
+
+
+
+<div class="alinear-input" style="width:80%; margin-left: 10%; margin-right: 10px;">
+    <table mat-table [dataSource]="dataSource" class="listabicolor">
+
+ 
+    <ng-container matColumnDef="Elemento">
+      <th mat-header-cell *matHeaderCellDef style="background-color: white;"> Elemento </th>
+      <td mat-cell *matCellDef="let element"> {{element.Elemento}} </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="Cantidad">
+      <th mat-header-cell *matHeaderCellDef style="background-color: white;"> Cantidad </th>
+      <td mat-cell *matCellDef="let element" > {{element.Cantidad}} </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="Descripcion">
+      <th mat-header-cell *matHeaderCellDef style="background-color: white;"> Descripción </th>
+      <td mat-cell *matCellDef="let element"> {{element.Descripcion}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="icon">
+      <th mat-header-cell *matHeaderCellDef style="background-color: white;"> </th>
+      <td mat-cell *matCellDef="let element"> <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="cancel" style="color: red"></mat-icon> </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+
+<!-----------------------            esta linea no es parte del codigo                    ----------------------->
+<div  align="center">
+<mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="warning" style="font-size: 200px; height: 200px ; width: 200px; color: rgb(182, 182, 8);"></mat-icon></div>
+<!-----------------------            esta linea no es parte del codigo                    ----------------------->
